@@ -8,7 +8,7 @@ import subprocess
 if os.path.exists("dist"):
     shutil.rmtree("dist")
 
-VERSION = '1.1.0'
+VERSION = '1.1.0.1'
 
 
 with open('README.md') as f:
@@ -29,7 +29,7 @@ Update = 'Heirarchy option deleted, clustering deleted and signatures orders by 
 requirements=[
           'matplotlib>=3.3.0',
           'scipy>=1.3.3',
-          'torch==1.5.1',
+          'torch>=1.5.1',
           'numpy>=1.17.4', 
           'pandas>=0.25.3', 
           'nimfa>=1.1.0', 
@@ -48,16 +48,16 @@ operating_system = sys.platform
 print(operating_system)
 if operating_system  in ['win32','cygwin','windows']:
     requirements.remove('matplotlib>=3.3.0')
-    requirements.remove('torch==1.5.1')
+    requirements.remove('torch==1.7.1')
     print('Trying to install pytorch!')
     code = 1
     try:
-        code = subprocess.call(['pip', 'install', 'torch===1.5.1+cpu',  '-f', 'https://download.pytorch.org/whl/torch_stable.html'])
+        code = subprocess.call(['pip', 'install', 'torch===1.7.1+cpu',  '-f', 'https://download.pytorch.org/whl/torch_stable.html'])
         if code != 0:
             raise Exception('Torch  instalation failed !')
     except:
         try:
-            code = subprocess.call(['pip3', 'install', 'torch===1.5.1+cpu',  '-f', 'https://download.pytorch.org/whl/torch_stable.html'])
+            code = subprocess.call(['pip3', 'install', 'torch===1.7.1+cpu',  '-f', 'https://download.pytorch.org/whl/torch_stable.html'])
             if code != 0:
                 raise Exception('Torch instalation failed !')
         except:
