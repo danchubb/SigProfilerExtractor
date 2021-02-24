@@ -1131,7 +1131,7 @@ def signature_decomposition(signatures, mtype, directory, genome_build="GRCh37",
         signames = sigDatabase.columns
         connected_sigs=False
         
-    if collapse_SBS288==False and mtype=="288":
+    elif (collapse_SBS288==False) and (mtype=="288"):
         sigDatabase = pd.read_csv(paths+"/data/Reference_Signatures/"+genome_build+"/COSMIC_v3.2_SBS288_GRCh37.txt", sep="\t", index_col=0)
         signames = sigDatabase.columns 
         
