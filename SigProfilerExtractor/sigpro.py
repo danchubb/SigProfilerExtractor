@@ -819,7 +819,7 @@ def sigProfilerExtractor(input_type,
             processes = sub.decipher_signatures(excecution_parameters,
                                                 genomes= genomes, 
                                                 mut_context=m,
-                                                i = i)
+                                                i = i,after_parallel)
             
             
             
